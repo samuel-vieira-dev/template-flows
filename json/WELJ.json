@@ -1,0 +1,283 @@
+{
+    "version": "2.1",
+    "data_api_version": "3.0",
+    "data_channel_uri": "https://3983-2804-1e68-c211-ff3c-f433-7319-4b8d-e100.ngrok-free.app/flow",
+    "routing_model": {
+        "INICIAL": [
+            "FINAL"
+        ],
+        "FINAL": []
+    },
+    "screens": [
+        {
+            "id": "INICIAL",
+            "title": "Primeiro Passo",
+            "data": {
+                "error_messages": {
+                    "type": "object",
+                    "__example__": {
+                        "valorObjetivo": "Exemplo"
+                    }
+                },
+                "proximoMes": {
+                    "type": "string",
+                    "__example__": "1693569600000"
+                },
+                "nomeObjetivoVisible": {
+                    "type": "boolean",
+                    "__example__": false
+                },
+                "mensagemInicial": {
+                    "type": "string",
+                    "__example__": "Interessante! Podemos alcançar qualquer sonho com planejamento. ✍️"
+                },
+                "mensagemValorObjetivo": {
+                    "type": "string",
+                    "__example__": "Quanto você precisa juntar para alcançar esse objetivo único?"
+                },
+                "mensagemValorInvestimento": {
+                    "type": "string",
+                    "__example__": "Qual valor mensal você pode investir nesse objetivo?"
+                },
+                "mensagemDataObjetivo": {
+                    "type": "string",
+                    "__example__": "Até quando você gostaria de alcançar esse objetivo especial?"
+                }
+            },
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "Form",
+                        "name": "text_input_form",
+                        "children": [
+                            {
+                                "type": "TextCaption",
+                                "text": "Passo 1 de 2"
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "Selecione uma opção:"
+                            },
+                            {
+                                "type": "Dropdown",
+                                "name": "primeiroPasso",
+                                "label": "Escolha um objetivo",
+                                "data-source": [
+                                    {
+                                        "id": "0",
+                                        "title": "Reserva de Emergência 🚑",
+                                        "description": "Segurança financeira para imprevistos, essencial para tranquilidade."
+                                    },
+                                    {
+                                        "id": "1",
+                                        "title": "Liberdade Financeira 💸",
+                                        "description": "Conquiste a liberdade que tanto sonhou"
+                                    },
+                                    {
+                                        "id": "2",
+                                        "title": "Aposentadoria 🏖️",
+                                        "description": "Construa o futuro dos seus sonhos"
+                                    },
+                                    {
+                                        "id": "3",
+                                        "title": "Casa Nova 🏡",
+                                        "description": "Conquiste sua casa ou faça reformas"
+                                    },
+                                    {
+                                        "id": "4",
+                                        "title": "Viagem ✈️",
+                                        "description": "Faça a viagem dos seus sonhos"
+                                    },
+                                    {
+                                        "id": "5",
+                                        "title": "Carro Novo 🚗",
+                                        "description": "Compre o carro que você tanto quer"
+                                    },
+                                    {
+                                        "id": "6",
+                                        "title": "Estudos 🎓",
+                                        "description": "Planeje seus estudos ou de seus filhos"
+                                    },
+                                    {
+                                        "id": "7",
+                                        "title": "Outros Objetivos ✍️",
+                                        "description": "Te ajudamos a alcançar qualquer objetivo"
+                                    }
+                                ],
+                                "required": true,
+                                "on-select-action": {
+                                    "name": "data_exchange",
+                                    "payload": {
+                                        "trigger": "primeiroPasso",
+                                        "primeiroPasso": "${form.primeiroPasso}"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "Dê um nome para o seu objetivo:",
+                                "visible": "${data.nomeObjetivoVisible}"
+                            },
+                            {
+                                "type": "TextInput",
+                                "input-type": "text",
+                                "name": "nomeObjetivo",
+                                "label": "Ex.: Viajar",
+                                "max-chars": 23,
+                                "required": false,
+                                "visible": "${data.nomeObjetivoVisible}"
+                            },
+                            {
+                                "type": "Footer",
+                                "label": "Continuar",
+                                "on-click-action": {
+                                    "name": "data_exchange",
+                                    "payload": {
+                                        "next": "FINAL",
+                                        "primeiroPasso": "${form.primeiroPasso}",
+                                        "nomeObjetivo": "${form.nomeObjetivo}",
+                                        "proximoMes": "${data.proximoMes}",
+                                        "mensagemInicial": "${data.proximoMes}",
+                                        "mensagemValorObjetivo": "${data.proximoMes}",
+                                        "mensagemValorInvestimento": "${data.proximoMes}",
+                                        "mensagemDataObjetivo": "${data.proximoMes}"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "FINAL",
+            "title": "Meus Objetivos",
+            "terminal": true,
+            "data": {
+                "error_messages": {
+                    "type": "object",
+                    "__example__": {
+                        "valorObjetivo": "investe ai paizao"
+                    }
+                },
+                "primeiroPasso": {
+                    "type": "string",
+                    "__example__": "Example"
+                },
+                "nomeObjetivo": {
+                    "type": "string",
+                    "__example__": "Example"
+                },
+                "proximoMes": {
+                    "type": "string",
+                    "__example__": "1693569600000"
+                },
+                "mensagemInicial": {
+                    "type": "string",
+                    "__example__": "Interessante! Podemos alcançar qualquer sonho com planejamento. ✍️"
+                },
+                "mensagemValorObjetivo": {
+                    "type": "string",
+                    "__example__": "Quanto você precisa juntar para alcançar esse objetivo único?"
+                },
+                "mensagemValorInvestimento": {
+                    "type": "string",
+                    "__example__": "Quanto você precisa juntar para alcançar esse objetivo único?"
+                },
+                "mensagemDataObjetivo": {
+                    "type": "string",
+                    "__example__": "Quanto você precisa juntar para alcançar esse objetivo único?"
+                }
+            },
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "Form",
+                        "name": "form",
+                        "error-messages": "${data.error_messages}",
+                        "children": [
+                            {
+                                "type": "TextCaption",
+                                "text": "Passo 2 de 2"
+                            },
+                            {
+                                "type": "TextBody",
+                                "font-weight": "bold",
+                                "text": "${data.mensagemInicial}"
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "${data.mensagemValorObjetivo}"
+                            },
+                            {
+                                "type": "TextCaption",
+                                "text": "Insira o valor sem os centavos."
+                            },
+                            {
+                                "type": "TextInput",
+                                "input-type": "number",
+                                "name": "valorObjetivo",
+                                "label": "Ex.: 15000",
+                                "helper-text": "Valor mínimo: R$300",
+                                "min-chars": 3,
+                                "max-chars": 8,
+                                "required": true
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "${data.mensagemValorInvestimento}"
+                            },
+                            {
+                                "type": "TextCaption",
+                                "font-weight": "normal",
+                                "text": "Insira o valor sem os centavos."
+                            },
+                            {
+                                "type": "TextInput",
+                                "input-type": "number",
+                                "name": "valorInvestimento",
+                                "label": "Ex.: 750",
+                                "helper-text": "Valor mínimo: R$100",
+                                "min-chars": 3,
+                                "max-chars": 8,
+                                "required": true
+                            },
+                            {
+                                "type": "TextSubheading",
+                                "text": "${data.mensagemDataObjetivo}"
+                            },
+                            {
+                                "type": "TextCaption",
+                                "text": "Quanto menor for o prazo, maior o valor investido mensalmente."
+                            },
+                            {
+                                "type": "DatePicker",
+                                "name": "dataObjetivo",
+                                "label": "Insira a data",
+                                "helper-text": "Ex.: 25/12/2030",
+                                "min-date": "${data.proximoMes}",
+                                "required": true
+                            },
+                            {
+                                "type": "Footer",
+                                "label": "Finalizar",
+                                "on-click-action": {
+                                    "name": "complete",
+                                    "payload": {
+                                        "primeiroPasso": "${data.primeiroPasso}",
+                                        "nomeObjetivo": "${data.nomeObjetivo}",
+                                        "valorObjetivo": "${form.valorObjetivo}",
+                                        "valorInvestimento": "${form.valorInvestimento}",
+                                        "dataObjetivo": "${form.dataObjetivo}"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
