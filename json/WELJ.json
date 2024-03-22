@@ -1,7 +1,6 @@
 {
-    "version": "2.1",
+    "version": "3.1",
     "data_api_version": "3.0",
-    "data_channel_uri": "https://3983-2804-1e68-c211-ff3c-f433-7319-4b8d-e100.ngrok-free.app/flow",
     "routing_model": {
         "INICIAL": [
             "FINAL"
