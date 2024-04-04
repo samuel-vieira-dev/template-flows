@@ -1,12 +1,13 @@
-import getShowAddressScreenData from '../screens/showAddress.js';
+import initScreenData from '../screens/initScreenData.js';
 import endScreenData from '../screens/endScreen.js';
+import 'dotenv/config';
 
 const getScreenData = (screenName, userContext) => {
     switch (screenName) {
-        case 'SHOW_ADDRESS':
-            return getShowAddressScreenData(userContext);
+        case process.env.INICIAL_SCREEN:
+            return initScreenData(userContext);
             
-        case 'SUCCESS':
+        case process.env.FINAL_SCREEN:
             return endScreenData(userContext);
 
         default:
@@ -15,4 +16,3 @@ const getScreenData = (screenName, userContext) => {
 };
 
 export default getScreenData;
-

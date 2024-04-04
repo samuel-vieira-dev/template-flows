@@ -1,11 +1,12 @@
 import encryptResponse from "../crypto/encrypt.js";
+import 'dotenv/config';
 
 const healthCheck = (decryptedBody, aesKeyBuffer, initialVectorBuffer, res) => {
     if (decryptedBody.action === 'ping') {
         const pingResponse = {
-            "version": "3.0",
-            "data": {
-                "status": "active"
+            version: process.env.VERSION_SCREEN_API_FLOWS,
+            data: {
+                status: "active"
             }
         };
         const encryptedResponse = encryptResponse(pingResponse, aesKeyBuffer, initialVectorBuffer);
