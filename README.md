@@ -2,6 +2,17 @@
 
 Esta documentação detalha a API desenvolvida com o conceito de strategies, responsável por interagir com payloads criptografados, processar esses dados e responder também de forma criptografada. A API é integrada ao sistema da Meta através de webhooks em Flows criados dentro da Waba, onde payloads são recebidos e devem ser processados com os parâmetros necessários para renderizar a tela dos Flows.
 
+# Sumário
+
+- [Visão Geral do Endpoint](#visão-geral-do-endpoint)
+- [Métodos de Criptografia e Descriptografia](#métodos-de-criptografia-e-descriptografia)
+- [Regras de Negócio e Fluxo de Telas](#regras-de-negócio-e-fluxo-de-telas)
+- [Integração com Blip para Criação de Trackings](#integração-com-blip-para-criação-de-trackings)
+- [Integração com a API dos Meus Objetivos](#integração-com-a-api-dos-meus-objetivos)
+- [Boas Práticas na Implementação de Endpoints para Flows](#boas-práticas-na-implementação-de-endpoints-para-flows)
+- [Referências](#referências)
+- [WELJ - JSON dos Meus Objetivos](#welj---json-dos-meus-objetivos)
+
 ## Visão Geral do Endpoint
 
 ### Endpoint `/flow`
