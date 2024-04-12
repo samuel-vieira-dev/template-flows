@@ -29,6 +29,7 @@ const initScreenData = async (userContext) => {
     version: process.env.VERSION_SCREEN_API_FLOWS,
     screen: process.env.INICIAL_SCREEN,
     data: {
+      error_messages: {},
       nomeObjetivoVisible: false,
       proximoMes: getNextMonthTimestamp(),
       ...mensagensDinamicas

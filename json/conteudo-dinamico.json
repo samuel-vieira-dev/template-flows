@@ -1,33 +1,33 @@
 {
-    "recipient_type":"individual",
-    "type":"interactive",
-    "interactive":{
-       "type":"flow",
-       "body":{
-          "text":"Crie agora mesmo o seu objetivo 👇"
-       },
-       "action":{
-          "name":"flow",
-          "parameters":{
-             "flow_message_version":"3",
-             "flow_token": "{{contact.identity}}",
-             "flow_id":"320705994351858",
-             "flow_cta":"Criar Meus Objetivos",
-             "mode": "draft",
-             "flow_action":"navigate",
-             "flow_action_payload":{
-                "screen":"INICIAL",
-                "data": {
-                    "proximoMes": "{{proximoMesTimestamp}}",
-                    "nomeObjetivoVisible": false,
-                    "mensagemInicial": "Mensagem Inicial",
-                    "mensagemValorObjetivo": "Mensagem Valor Objetivo",
-                    "mensagemValorInvestimento": "Mensagem Valor Investimento",
-                    "mensagemDataObjetivo": "Mensagem Data Objetivo",
-                    "error_messages": {}
-                 }
-             }
-          }
-       }
-    }
- }
+   "recipient_type":"individual",
+   "type":"interactive",
+   "interactive":{
+      "type":"flow",
+      "body":{
+         "text":"Crie agora mesmo o seu objetivo 👇"
+      },
+      "action":{
+         "name":"flow",
+         "parameters":{
+            "flow_message_version":"3",
+            "flow_token": "{{contact.identity}}",
+            "flow_id":"320705994351858",
+            "flow_cta":"Criar Meus Objetivos",
+            "mode": "draft",
+            "flow_action":"navigate",
+            "flow_action_payload":{
+               "screen":"INICIAL",
+               "data": {
+                   "proximoMes": "{{proximoMesTimestamp}}",
+                   "nomeObjetivoVisible": false,
+                   "mensagemInicial": "Interessante! Podemos alcançar qualquer sonho com planejamento. ✍️",
+                   "mensagemValorObjetivo": "Quanto você precisa juntar para alcançar esse objetivo único?",
+                   "mensagemValorInvestimento": "Qual valor mensal você pode investir nesse objetivo?",
+                   "mensagemDataObjetivo": "Até quando você gostaria de alcançar esse objetivo especial?",
+                   "error_messages": {}
+                }
+            }
+         }
+      }
+   }
+}

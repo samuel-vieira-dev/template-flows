@@ -1,0 +1,16 @@
+{
+    "version": "3.0",
+    "screen": "INICIAL",
+    "data": {
+        "error_messages": {
+            "valorObjetivo": "Exemplo"
+        },
+        "proximoMes": "1693569600000",
+        "nomeObjetivoVisible": false,
+        "mensagemInicial": "Interessante! Podemos alcançar qualquer sonho com planejamento. ✍️",
+        "mensagemValorObjetivo": "Quanto você precisa juntar para alcançar esse objetivo único?",
+        "mensagemValorInvestimento": "Qual valor mensal você pode investir nesse objetivo?",
+        "mensagemDataObjetivo": "Até quando você gostaria de alcançar esse objetivo especial?"
+    }
+}
+
