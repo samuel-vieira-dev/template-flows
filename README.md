@@ -10,6 +10,7 @@ Esta documentação detalha a API desenvolvida com o conceito de strategies, res
 - [Integração com Blip para Criação de Trackings](#integração-com-blip-para-criação-de-trackings)
 - [Integração com a API dos Meus Objetivos](#integração-com-a-api-dos-meus-objetivos)
 - [Boas Práticas na Implementação de Endpoints para Flows](#boas-práticas-na-implementação-de-endpoints-para-flows)
+- [Como Rodar e Testar a API](#como-rodar-e-testar-a-api)
 - [Referências](#referências)
 - [WELJ - JSON dos Meus Objetivos](#welj---json-dos-meus-objetivos)
 
@@ -257,6 +258,56 @@ Para desencadear a conclusão do flow, envie a seguinte resposta ao pedido de tr
 | data.extension_message_response.params       | (obrigatório) Um JSON com dados que serão incluídos na mensagem de conclusão do fluxo |
 | data.extension_message_response.params.flow_token | (obrigatório) string Um token de Flow gerado e enviado por você como parte da mensagem de Flow. |
 
+## Como Rodar e Testar a API
+
+Esta seção fornece instruções passo a passo sobre como colocar a API em funcionamento e como testá-la.
+
+### Rodando a API
+
+1. **Clonar o repositório:**
+```javascript
+git clone https://github.com/samuel-vieira-dev/template-flows.git
+```
+2. **Entrar na pasta raiz:**
+```javascript
+cd template-flows
+```
+3. **Instalar as dependências:**
+```javascript
+npm install
+```
+4. **Iniciar a API:**
+```javascript
+npm run start
+```
+
+
+### Testando a API
+
+Para testar a API, você precisará expor sua API local para a internet e cadastrar a URL na sua Waba para que ela possa receber os payloads. Isso pode ser feito da seguinte forma:
+
+1. **Expondo a API localmente:**
+- Instale o [ngrok](https://ngrok.com/) ou uma ferramenta similar.
+- Execute o comando para expor o servidor local (supondo que a API esteja rodando na porta 4343):
+  ```
+  ngrok http 4343
+  ```
+- Anote a URL gerada pelo ngrok, que será usada para receber payloads (por exemplo, `https://abc123.ngrok.io`).
+
+2. **Configurando a URL na Waba:**
+- Acesse o painel administrativo da sua Waba.
+- Cadastre a URL fornecida pelo ngrok para receber os payloads quando o usuário interage com o componente Flows.
+
+### Teste no WhatsApp
+
+Para testar se tudo está funcionando como esperado:
+
+1. Abra o WhatsApp e inicie uma conversa com o Bot da Rico.
+2. Acesse o Menu Principal e escolha a opção "Meus Objetivos".
+3. Clique no componente do Flows para iniciar a interação.
+4. A Meta enviará o payload para a API através da URL cadastrada.
+
+Acompanhe os logs no console e veja se as telas estão renderizando no WhatsApp.
 
 
 ## Referências
